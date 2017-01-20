@@ -1,6 +1,6 @@
 {
   "name": "test-port-provider",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Test port provider - provides free random ports",
   "keywords": [
     "port",
