@@ -2,9 +2,14 @@
   "name": "test-port-provider",
   "version": "0.0.1",
   "description": "Test port provider - provides free random ports",
+  "keywords": [
+    "port",
+    "ports",
+    "test"
+  ],
+  "main": "script.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha",
-    "deploy": "npm install"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
