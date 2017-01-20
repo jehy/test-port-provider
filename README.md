@@ -11,7 +11,6 @@ npm install test-port-provider
 
 ##Usage
 ```js
-'use strict';
 var
   net          = require('net'),
   portProvider = require('test-port-provider');
@@ -19,6 +18,7 @@ var
 
   var PortProvider = new portProvider(80, true, 100, true);
   var port=PortProvider.getPort();
+  var port2=PortProvider.getPort();
   //use in in express or whatever...
 ```
 ## API
