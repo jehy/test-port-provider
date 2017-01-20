@@ -1,6 +1,6 @@
 #LogFox
 
-[![Build Status](https://travis-ci.org/jehy/logfox.svg?branch=master)](https://travis-ci.org/jehy/logfox)
+[![Build Status](https://travis-ci.org/jehy/test-port-provider.svg?branch=master)](https://travis-ci.org/jehy/logfox)
 
 Checks if a TCP port on localhost is available for some out
  service by trying to listen on it.
