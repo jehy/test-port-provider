@@ -28,7 +28,7 @@ describe('portProvider', function () {
             err = true;
           });
           server.on('listening', function (e) {
-            var end = Promise.resolve(true).delay(1000).then(function () {
+            var end = Promise.delay(1000).then(function () {
               server.close();
             });
             res.push(end);

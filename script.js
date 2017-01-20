@@ -21,18 +21,16 @@ var TestPortProvider = function (startPort, host, tryTestPorts, connectTimeout, 
     connectTimeout = 500;
 
   this.incrementPort = function () {
-    if (this.currentPort == 65534)
+    if (this.currentPort == 65534) {
       this.currentPort = 1;
-    else
+    }
+    else {
       this.currentPort++;
+    }
   };
-  /**
-   * @name getPort
-   * @return {int} port
-   */
   this.getPort = function () {
-    var p = this;
-    var testMe = p.currentPort;
+    var p      = this,
+        testMe = this.currentPort;
     p.incrementPort();
     return Promise.resolve().then(function () {
       if (!tryTestPorts)
@@ -60,7 +58,7 @@ var TestPortProvider = function (startPort, host, tryTestPorts, connectTimeout, 
           port = p.currentPort + 1;
           p.incrementPort();
         }
-        resolve(p.testPorts(port));
+        resolve(p.testPorts(host, port));
       });
       server.on('listening', function (e) {
         server.close(function () {
