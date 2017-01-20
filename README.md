@@ -25,6 +25,7 @@ var
 ### constructor
 ```js
 /**
+ * @param startPort {int} the first port to start scanning
  * @param host {string} IP on which we should listen, default 127.0.0.1
  * @param tryTestPorts{boolean} whether we actually need to test ports or just give increments, default true
  * @param connectTimeout{int} connection timeout in ms, default 500
