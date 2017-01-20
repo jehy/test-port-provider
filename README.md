@@ -1,9 +1,9 @@
-#LogFox
+#Test Port Provider
 
 [![Build Status](https://travis-ci.org/jehy/test-port-provider.svg?branch=master)](https://travis-ci.org/jehy/logfox)
 
-Checks if a TCP port on localhost is available for some out
- service by trying to listen on it.
+Gets listenable ports (beginning from the one you pass) by trying to listen on them.
+
 ##Installation
 ```bash
 npm install test-port-provider
