@@ -21,7 +21,7 @@ var TestPortProvider = function (startPort, host, tryTestPorts, connectTimeout, 
     connectTimeout = 500;
 
   this.incrementPort = function () {
-    if (this.currentPort == 65535)
+    if (this.currentPort == 65534)
       this.currentPort = 1;
     else
       this.currentPort++;
