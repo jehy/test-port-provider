@@ -16,7 +16,7 @@ var
   portProvider = require('test-port-provider');
 
 
-  var PortProvider = new portProvider(80, true, 100, true);
+  var PortProvider = new portProvider(80,'127.0.0.1', true, 100, true);
   var port=PortProvider.getPort();
   var port2=PortProvider.getPort();
   //use in in express or whatever...
@@ -26,9 +26,10 @@ var
 ```js
 /**
  * @param startPort
- * @param tryTestPorts{boolean} whether we actually need to test ports or just give increments
- * @param connectTimeout{int} connection timeout in ms
- * @param log {boolean} whether we need to output logs to console
+ * @param tryTestPorts{boolean} whether we actually need to test ports or just give increments, default true
+ * @param connectTimeout{int} connection timeout in ms, default 500
+ * @param log {boolean} whether we need to output logs to console, default false
+ * @param host {string} IP on which we should listen, default 127.0.0.1
  * @constructor
  */
 ```

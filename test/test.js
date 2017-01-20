@@ -10,7 +10,7 @@ describe('portProvider', function () {
   it('should provide some free ports without overlapping', function (done) {
 
     this.timeout(5000);
-    var portProvider = new PortProvider(80, true, 500, false);
+    var portProvider = new PortProvider(80, '127.0.0.1', true, 500, false);
     var res = [];
     var err = false;
 
