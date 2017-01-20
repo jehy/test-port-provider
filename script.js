@@ -5,10 +5,10 @@ var
 /**
  *
  * @param startPort
+ * @param host {string} IP on which we should listen, default 127.0.0.1
  * @param tryTestPorts{boolean} whether we actually need to test ports or just give increments, default true
  * @param connectTimeout{int} connection timeout in ms, default 500
  * @param log {boolean} whether we need to output logs to console, default false
- * @param host {string} IP on which we should listen, default 127.0.0.1
  * @constructor
  */
 var TestPortProvider = function (startPort, host, tryTestPorts, connectTimeout, log) {
