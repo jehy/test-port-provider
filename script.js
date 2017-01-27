@@ -4,21 +4,23 @@ var
   Promise = require('bluebird');
 /**
  *
- * @param startPort {int} the first port to start scanning
- * @param host {string} IP on which we should listen, default 127.0.0.1
- * @param tryTestPorts{boolean} whether we actually need to test ports or just give increments, default true
- * @param connectTimeout{int} connection timeout in ms, default 500
- * @param log {boolean} whether we need to output logs to console, default false
+ * @param [startPort] {int} the first port to start scanning, default 81
+ * @param [host] {string} IP on which we should listen, default 127.0.0.1
+ * @param [tryTestPorts]{boolean} whether we actually need to test ports or just give increments, default true
+ * @param [connectTimeout]{int} connection timeout in ms, default 500
+ * @param [log] {boolean} whether we need to output logs to console, default false
  * @constructor
  */
 var TestPortProvider = function (startPort, host, tryTestPorts, connectTimeout, log) {
-  this.currentPort = startPort;
   if (tryTestPorts === undefined)
     tryTestPorts = true;
   if (host === undefined)
     host = '127.0.0.1';
+  if (startPort === undefined)
+    startPort = 81;
   if (connectTimeout === undefined)
     connectTimeout = 500;
+  this.currentPort = startPort;
 
   this.incrementPort = function () {
     if (this.currentPort == 65534) {
