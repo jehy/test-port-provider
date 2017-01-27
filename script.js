@@ -33,7 +33,6 @@ var TestPortProvider = function (startPort, host, tryTestPorts, connectTimeout, 
   this.getPort = function () {
     var p      = this,
         testMe = this.currentPort;
-    p.incrementPort();
     return Promise.resolve().then(function () {
       if (!tryTestPorts)
         return (testMe);
@@ -54,13 +53,12 @@ var TestPortProvider = function (startPort, host, tryTestPorts, connectTimeout, 
 
       server.listen(port, host);
       server.on('error', function (e) {
-        if (log)
-          console.log('port ' + port + ' is busy, trying ' + (port + 1));
-        if (p.currentPort > port + 1) {
-          port = p.currentPort + 1;
-          p.incrementPort();
+        var tryPort = port + 1;
+        if (p.currentPort > tryPort) {
+          tryPort = p.currentPort + 1;
         }
-        resolve(p.testPorts(host, port));
+        p.incrementPort();
+        resolve(p.testPorts(host, tryPort));
       });
       server.on('listening', function (e) {
         server.close(function () {
