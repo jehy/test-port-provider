@@ -1,6 +1,6 @@
 #Test Port Provider
 
-[![Build Status](https://travis-ci.org/jehy/test-port-provider.svg?branch=master)](https://travis-ci.org/jehy/logfox)
+[![Build Status](https://travis-ci.org/jehy/test-port-provider.svg?branch=master)](https://travis-ci.org/jehy/test-port-provider)
 
 Gets listenable ports (beginning from the one you pass) by trying to listen on them.
 
